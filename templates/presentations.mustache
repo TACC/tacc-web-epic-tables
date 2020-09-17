@@ -1,0 +1,45 @@
+<style id="style--table" type="text/css">
+{{> styles}}</style>
+    <p>
+        <a name="top"></a></p>
+    <h3>
+        Publications</h3>
+    <table class="weteachcs-table">
+        <thead>
+            <tr>
+                <th class="weteachcs-table__date">
+                    Date</th>
+                <th class="weteachcs-table__title">
+                    Title</th>
+                <th class="weteachcs-table__place">
+                    Presented At</th>
+                <th class="weteachcs-table__cite">
+                    Author(s)</th>
+                <th class="weteachcs-table__link">
+                    Link</th>
+            </tr>
+        </thead>
+        <tbody>
+        {#entries}
+            <tr>
+                <td class="weteachcs-table__date">
+                    {{date}}</td>
+                <td class="weteachcs-table__title">
+                    {{title}}</td>
+                <td class="weteachcs-table__place">
+                    {{place}}</td>
+                <td class="weteachcs-table__cite">
+                    <ul>
+                        {#authors}
+                        <li>
+                            {{.}}</li>
+                        {/authors}
+                    </ul>
+                </td>
+                <td class="weteachcs-table__link">
+                    <a href="{{link.url}}" target="_blank" {#link.title} title="{{link.title}}"{#link.title}>{{#is-download}}Download{{/is-download}}{{^is-download}}View{{/is-download}}</a></td>
+            </tr>
+        {/entries}
+        </tbody>
+    </table>
+    
