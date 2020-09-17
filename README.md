@@ -1,8 +1,8 @@
 # TACC Website EPIC Tables
 
-This project compiles data into templates to create markup for the body of the [TACC Staff Directory][tacc-dir].
+This project compiles data into templates to create markup for the body of the [EPIC Presenetations & Publications Page][epic-prespub].
 
-[tacc-dir]: https://www.tacc.utexas.edu/about/directory "TACC: About: Staff Directory"
+[epic-prespub]: https://www.tacc.utexas.edu/epic/research/presentations-and-publications "TACC: EPIC: Research: Presenetations & Publications Page"
 
 ## Usage
 
@@ -14,13 +14,3 @@ This project compiles data into templates to create markup for the body of the [
 3. Confirm output in:
     - `dist/`
 4. Use output.
-
-
-## Repository History
-
-The first 300 commits of this repository are from a prior BitBucket repo that contained what is now multiple repositories imported from that original repository:
-
-- [tacc-web-content](https://github.com/tacc-wbomar/tacc-web-content)
-- [tacc-web-staff-dir](https://github.com/tacc-wbomar/tacc-web-staff-dir)
-- [tacc-web-jobs-page](https://github.com/tacc-wbomar/tacc-web-jobs-page)
-- [tacc-web-sc19-page](https://github.com/tacc-wbomar/tacc-web-sc19-page)
