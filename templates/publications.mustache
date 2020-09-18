@@ -15,16 +15,16 @@
             </tr>
         </thead>
         <tbody>
-        {#entries}
+        {{#entries}}
             <tr>
                 <td class="weteachcs-table__title">
-                    {{{title}}}</td>
+                    {{name}}</td>
                 <td class="weteachcs-table__cite">
                     {{{citation}}}</td>
                 <td class="weteachcs-table__link">
-                    <a href="{{link.url}}" target="_blank" {#link.title} title="{{link.title}}"{#link.title}>{{#is-download}}Download{{/is-download}}{{^is-download}}View{{/is-download}}</a></td>
+                    <a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a></td>
             </tr>
-        {/entries}
+        {{/entries}}
         </tbody>
     </table>
     

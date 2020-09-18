@@ -19,8 +19,7 @@
             </tr>
         </thead>
         <tbody>
-        {{.}}
-        {#entries}
+        {{#entries}}
             <tr>
                 <td class="weteachcs-table__date">
                     {{date}}</td>
@@ -32,9 +31,9 @@
                     {{authors}}
                 </td>
                 <td class="weteachcs-table__link">
-                    <a href="{{link}}" target="_blank" {#name} title="{{name}}"{/name}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a></td>
+                    <a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a></td>
             </tr>
-        {/entries}
+        {{/entries}}
         </tbody>
     </table>
     

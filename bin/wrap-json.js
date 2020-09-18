@@ -14,6 +14,6 @@ function wrap(data) {
 
 // Manipulate data
 const newData = wrap(data);
-// console.log(newData);
+console.log(newData);
 
 module.exports = newData;
