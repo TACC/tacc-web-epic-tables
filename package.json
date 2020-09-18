@@ -4,6 +4,7 @@
   "description": "A utility to create markup for Staff Directory pages based on flatfile data",
   "main": "index.js",
   "devDependencies": {
+    "csvtojson": "^2.0.10",
     "mustache": "^3.2.0",
     "nps": "^5.9.12",
     "remark": "^11.0.2",
