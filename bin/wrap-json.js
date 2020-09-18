@@ -7,10 +7,13 @@ const data = JSON.parse(json);
 
 /** Wrap all data in a manner that mustache templates expect */
 function wrap(data) {
-  return { entries: data };
+  const wrappedData = { entries: data };
+
+  return JSON.stringify(wrappedData);
 }
 
 // Manipulate data
 const newData = wrap(data);
+// console.log(newData);
 
 module.exports = newData;

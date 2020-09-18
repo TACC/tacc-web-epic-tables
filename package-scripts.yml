@@ -11,20 +11,39 @@ scripts:
     # Via yaml.js (`yaml2json`) convert data from `.yaml` to `.json`
   # build:data: yaml2json --pretty ./assets/data.yaml > ./assets/_data.json
     # Via yaml.js (`csvtojson`) convert data from `.csv` to `.json`
-  build:data: csvtojson --noheader=false --headers='["ticket_date","on_web","tstamp"]' assets/data.csv > assets/_data.json
+  build:data: >-
+    csvtojson
+    --noheader=false
+    --headers='[
+      "ticket_or_date",
+      "is_published",
+      "timestamp",
+      "uploader",
+      "type",
+      "name",
+      "date",
+      "place",
+      "authors",
+      "link",
+      "file_name_or_year",
+      "citation"
+    ]'
+    assets/data.csv > assets/_data.json
 
   # Build final markup
     # Import partial template(s) (`-p ….mustache`)
     # Apply data into template, then ouput to… (`….json ….mustache >`)
     # Final markup file (`….html`)
   build:markup: nps build:markup:presentations build:markup:publications
-  build:markup:presentations: mustache
-    -p ./templates/partials/styles.css
-    ./bin/wrap-json.js ./templates/presentations.mustache >
+  build:markup:presentations: >-
+    mustache
+    -p ./templates/partials/styles.mustache
+    ./assets/_data.json ./templates/presentations.mustache >
     ./dist/presentations.html
-  build:markup:publications: mustache
-    -p ./templates/partials/styles.css
-    ./bin/wrap-json.js ./templates/publications.mustache >
+  build:markup:publications: >-
+    mustache
+    -p ./templates/partials/styles.mustache
+    ./assets/_data.json ./templates/publications.mustache >
     ./dist/publications.html
 
   report: echo "Copy relevant markup from './dist/___.html"
