@@ -9,11 +9,10 @@ const data = JSON.parse(json);
 function wrap(data) {
   const wrappedData = { entries: data };
 
-  return JSON.stringify(wrappedData);
+  return wrappedData;
 }
 
 // Manipulate data
 const newData = wrap(data);
-console.log(newData);
 
 module.exports = newData;

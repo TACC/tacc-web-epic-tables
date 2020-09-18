@@ -55,14 +55,16 @@ scripts:
     # Final markup file (`….html`)
   build:markup: nps build:markup:presentations build:markup:publications
   build:markup:presentations: >-
+    cp ./assets/_presentations.json ./assets/_data.json &&
     mustache
     -p ./templates/partials/styles.mustache
-    ./assets/_presentations_wrapped.json ./templates/presentations.mustache >
+    ./bin/manipulate-json.js ./templates/presentations.mustache >
     ./dist/presentations.html
   build:markup:publications: >-
+    cp ./assets/_publications.json ./assets/_data.json &&
     mustache
     -p ./templates/partials/styles.mustache
-    ./assets/_presentations_wrapped.json ./templates/publications.mustache >
+    ./bin/manipulate-json.js ./templates/publications.mustache >
     ./dist/publications.html
 
   report: echo "Copy relevant markup from './dist/___.html"
