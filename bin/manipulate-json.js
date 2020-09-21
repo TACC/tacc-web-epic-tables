@@ -16,6 +16,12 @@ function wrap(data) {
 function format(data) {
   data['entries'].forEach( entry => {
     entry.date = formatDate(entry.date);
+    entry.authors = formatAuthors(entry.authors);
+  });
+
+  // Some entries mus tnot be used
+  data['entries'] = data['entries'].filter( entry => {
+    return shouldKeepEntry(entry);
   });
 
   return data;
@@ -31,6 +37,30 @@ function formatDate(date) {
   };
 
   return dateObj.toLocaleString('en-US', options);
+}
+
+/** Split authors by comma, then return desired markup */
+function formatAuthors(authors) {
+  const authorsList = authors.split(',');
+  const authorsString = authorsList.map( author => '<span>' + author + '</span>').join(', ');
+
+  return authorsString;
+}
+
+/** Whether to retain an entry in the formatted data */
+function shouldKeepEntry(entry) {
+  const negativeValues = [
+    "DON'T POST YET",
+    'DONT POST YET'
+  ];
+
+  // WARNING: The column name may change
+  // WARNING: The possibly conditions may icnrease
+  shouldNotKeep = negativeValues.some( value => {
+    return (entry.ticket_or_date === value);
+  });
+
+  return ! shouldNotKeep;
 }
 
 // Manipulate data
