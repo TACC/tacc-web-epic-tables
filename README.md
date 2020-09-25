@@ -8,7 +8,7 @@ This project compiles data into templates to create markup for the body of the [
 
 1. Edit templates and data in:
     - `templates/`
-    - `data/`
+    - `assets/`
 2. Run build script:
     - `npm run build`
 3. Confirm output in:
