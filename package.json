@@ -1,21 +1,18 @@
 {
-  "name": "tacc-web-staff-dir",
+  "name": "tacc-web-epic-tables",
   "version": "1.0.0",
-  "description": "A utility to create markup for Staff Directory pages based on flatfile data",
+  "description": "A utility to create markup for tables on various EPIC pages based on flatfile data",
   "main": "index.js",
   "devDependencies": {
     "csvtojson": "^2.0.10",
     "mustache": "^3.2.0",
     "nps": "^5.9.12",
-    "remark": "^11.0.2",
-    "remark-html": "^10.0.0",
-    "shx": "^0.3.2",
-    "yamljs": "^0.3.0"
+    "shx": "^0.3.2"
   },
   "// scripts": {
     "start": "Allow running `scripts` via `nps …` from `package-scripts.yml`",
     "prebuild": "Delete then create output directory",
-    "build": "Build temporary partial templates, then build final markup",
+    "build": "Build temporary data, then build final markup",
     "postbuild": "Export final markup file, then run cleanup tasks"
   },
   "scripts": {
