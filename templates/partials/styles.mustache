@@ -1,119 +1,116 @@
 <style id="style--table" type="text/css">
-    /* WARN: Duplicated in:
-            - `epic/research/presentations`
-            - `epic/research/publications`
-    */
-    /*
-    WeTeach CS - Table
-    
-    Scope styles for table on WeTeach_CS page.
-    
-    .weteachcs-table
-    
-    Markup:
-    <table class="weteachcs-table">
-        <thead>
-            <tr>
-                <th class="weteachcs-table__date">
-                    Date</th>
-                <th class="weteachcs-table__title">
-                    Title</th>
-                <th class="weteachcs-table__place">
-                    Place of Presentation</th>
-                <th class="weteachcs-table__cite">
-                    Authors</th>
-                <th class="weteachcs-table__link">
-                    Link</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="weteachcs-table__date">
-                    Month, 2019</td>
-                <td class="weteachcs-table__title">
-                    Title 1</td>
-                <td class="weteachcs-table__place">
-                    Location 1</td>
-                <td class="weteachcs-table__cite">
-                    <ul>
-                        <li>Person 2,( Degree,) Institution</li>
-                    </ul>
-                </td>
-                <td class="weteachcs-table__link">
-                    <a  data-cke-saved-href="https://www.slideshare.net/weteachcs/abc-123" href="https://www.slideshare.net/weteachcs/abc-123" target="_blank">View</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="weteachcs-table">
-        <tbody>
-            <tr>
-                <th class="weteachcs-table__cite">
-                    Citation</th>
-                <th class="weteachcs-table__link">
-                    Link</th>
-            </tr>
-            <tr>
-                <td class="weteachcs-table__cite">
-                    Citation 1 (long text).
-                </td>
-                <td class="weteachcs-table__link">
-                    <a  data-cke-saved-href="http://utexas.box.com/s/abc123" href="http://utexas.box.com/s/abc123" target="_blank">View</a></td>
-            </tr>
-        </tbody>
-    </table>
-    
-    Style guide: components.weteachcs.table
-    */
-    .weteachcs-table {
-        margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+/* WARNING: Duplicated in other pages */
+/*
+WeTeach CS - Table
+
+Scope styles for table on WeTeach_CS page.
+
+.weteachcs-table
+
+Markup:
+<table class="weteachcs-table">
+    <thead>
+        <tr>
+            <th class="weteachcs-table__date">
+                Date</th>
+            <th class="weteachcs-table__title">
+                Title</th>
+            <th class="weteachcs-table__place">
+                Place of Presentation</th>
+            <th class="weteachcs-table__cite">
+                Authors</th>
+            <th class="weteachcs-table__link">
+                Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="weteachcs-table__date">
+                Month, 2019</td>
+            <td class="weteachcs-table__title">
+                Title 1</td>
+            <td class="weteachcs-table__place">
+                Location 1</td>
+            <td class="weteachcs-table__cite">
+                <ul>
+                    <li>Person 2,( Degree,) Institution</li>
+                </ul>
+            </td>
+            <td class="weteachcs-table__link">
+                <a  data-cke-saved-href="https://www.slideshare.net/weteachcs/abc-123" href="https://www.slideshare.net/weteachcs/abc-123" target="_blank">View</a></td>
+        </tr>
+    </tbody>
+</table>
+<table class="weteachcs-table">
+    <tbody>
+        <tr>
+            <th class="weteachcs-table__cite">
+                Citation</th>
+            <th class="weteachcs-table__link">
+                Link</th>
+        </tr>
+        <tr>
+            <td class="weteachcs-table__cite">
+                Citation 1 (long text).
+            </td>
+            <td class="weteachcs-table__link">
+                <a  data-cke-saved-href="http://utexas.box.com/s/abc123" href="http://utexas.box.com/s/abc123" target="_blank">View</a></td>
+        </tr>
+    </tbody>
+</table>
+
+Style guide: components.weteachcs.table
+*/
+.weteachcs-table {
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.weteachcs-table tr {
+    border: 1px solid #ddd;
+}
+.weteachcs-table th {
+    font-size: 1em;
+}
+
+/* For "mobile", render a single column of blocks */
+@media (max-width: 767.98px) {
+    .weteachcs-table table,
+    .weteachcs-table tr,
+    .weteachcs-table td    { display: block; }
+    .weteachcs-table thead { display: none; }
     .weteachcs-table tr {
-        border: 1px solid #ddd;
+        margin: 1em 0;
     }
-    .weteachcs-table th {
-        font-size: 1em;
+
+    /* Date */ .weteachcs-table__date {
+        font-weight: bold;
     }
-    
-    /* For "mobile", render a single column of blocks */
-    @media (max-width: 767.98px) {
-        .weteachcs-table table,
-        .weteachcs-table tr,
-        .weteachcs-table td    { display: block; }
-        .weteachcs-table thead { display: none; }
-        .weteachcs-table tr {
-            margin: 1em 0;
-        }
-    
-        /* Date */ .weteachcs-table__date {
-            font-weight: bold;
-        }
-        /* Title */ .weteachcs-table__title {
-            font-size: larger;
-        }
+    /* Title */ .weteachcs-table__title {
+        font-size: larger;
     }
-    
-    /* For "desktop" */
-    @media (min-width: 768px) {
-        /* Title */ td.weteachcs-table__title {
-            font-style: italic;
-        }
-        /* Location */ .weteachcs-table__place,
-        /* Citation */ .weteachcs-table__cite {
-            font-size: 12px; /* generally, this is the smallest allowed font size for legibiliy */
-        }
-        /* (Citation) */
-        .weteachcs-table ul {
-            margin: 0;
-        }
-        .weteachcs-table li {
-            list-style-position: inside;
-        }
-        .weteachcs-table span {
-            white-space: nowrap;
-            display: inline-block;
-        }
-        /* Link */ .weteachcs-table__link {
-            text-align: center;
-        }
-    }</style>
+}
+
+/* For "desktop" */
+@media (min-width: 768px) {
+    /* Title */ td.weteachcs-table__title {
+        font-style: italic;
+    }
+    /* Location */ .weteachcs-table__place,
+    /* Citation */ .weteachcs-table__cite {
+        font-size: 12px; /* generally, this is the smallest allowed font size for legibiliy */
+    }
+    /* (Citation) */
+    .weteachcs-table ul {
+        margin: 0;
+    }
+    .weteachcs-table li {
+        list-style-position: inside;
+    }
+    .weteachcs-table span {
+        white-space: nowrap;
+        display: inline-block;
+    }
+    /* Link */ .weteachcs-table__link {
+        text-align: center;
+    }
+}</style>
