@@ -33,7 +33,7 @@
                     {{{authors}}}
                 </td>
                 <td class="weteachcs-table__link">
-                    <a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a></td>
+                    {{#link}}<a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a>{{/link}}</td>
             </tr>
         {{/entries}}
         </tbody>
