@@ -9,7 +9,7 @@ scripts:
     # FAQ:     Prefix temporary data with underscore, to identify them
     #          as temporary (also, add underscore pattern to `.gitignore`)
     # Via `csvtojson` convert data from `.csv` to `.json`
-  build:data: nps build:data:presentations build:data:publications
+  build:data: nps build:data:presentations
   build:data:presentations: >-
     csvtojson
     --noheader=false
@@ -28,40 +28,17 @@ scripts:
       "citation"
     ]'
     assets/presentations.csv > assets/_presentations.json
-  build:data:publications: >-
-    csvtojson
-    --noheader=false
-    --headers='[
-      "ticket_or_date",
-      "is_published",
-      "timestamp",
-      "uploader",
-      "type",
-      "name_of_presentation",
-      "date",
-      "place",
-      "authors",
-      "link",
-      "name_of_publication",
-      "citation"
-    ]'
-    assets/publications.csv > assets/_publications.json
 
   # Build final markup
     # Import partial template(s) (`-p ….mustache`)
     # Apply data into template, then ouput to… (`….json ….mustache >`)
     # Final markup file (`….html`)
-  build:markup: nps build:markup:presentations build:markup:publications
+  build:markup: nps build:markup:presentations
   build:markup:presentations: >-
     cp ./assets/_presentations.json ./assets/_data.json &&
     mustache
     ./bin/manipulate-json.js ./templates/presentations.mustache >
     ./dist/presentations.html
-  build:markup:publications: >-
-    cp ./assets/_publications.json ./assets/_data.json &&
-    mustache
-    ./bin/manipulate-json.js ./templates/publications.mustache >
-    ./dist/publications.html
 
   # "Build" (really, just output) final styles
     # Import partial template(s) (`-p ….mustache`)

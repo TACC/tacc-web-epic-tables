@@ -1,8 +1,11 @@
 # TACC Website EPIC Tables
 
-This project compiles data into templates to create markup for the body of the [EPIC Presenetations & Publications Page][epic-prespub].
+This project compiles data into templates to create markup for the body of the [EPIC Presenetations Page][epic-pres].
 
-[epic-prespub]: https://www.tacc.utexas.edu/epic/research/presentations-and-publications "TACC: EPIC: Research: Presenetations & Publications Page"
+_This repo previously also managed content for [EPIC Publications Page][epic-pub]._
+
+[epic-pres]: https://www.tacc.utexas.edu/epic/research/presentations "TACC: EPIC: Research: Presenetations Page"
+[epic-pub]: https://www.tacc.utexas.edu/epic/research/publications "TACC: EPIC: Research: Publications Page"
 
 ## Usage
 
