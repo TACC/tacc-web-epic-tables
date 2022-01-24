@@ -14,31 +14,33 @@ scripts:
     csvtojson
     --noheader=false
     --headers='[
-      "ticket_or_date",
-      "is_published",
       "timestamp",
-      "uploader",
-      "type",
-      "name_of_presentation",
+      "submitter",
+      "webpage",
+      "name",
       "date",
       "place",
       "authors",
-      "link",
-      "name_of_publication",
-      "citation"
+      "link"
     ]'
     assets/presentations.csv > assets/_presentations.json
 
   # Build final markup
+    # Build all (`nps build:…`)
     # Import partial template(s) (`-p ….mustache`)
     # Apply data into template, then ouput to… (`….json ….mustache >`)
     # Final markup file (`….html`)
-  build:markup: nps build:markup:presentations
-  build:markup:presentations: >-
-    cp ./assets/_presentations.json ./assets/_data.json &&
+  build:markup: >-
+    nps build:markup:presentations:research
+    && nps build:markup:presentations:weteachcs
+  build:markup:presentations:research: >-
     mustache
-    ./bin/manipulate-json.js ./templates/presentations.mustache >
-    ./dist/presentations.html
+    ./bin/manipulate-for-research.js ./templates/presentations.mustache >
+    ./dist/presentations-for-research.html
+  build:markup:presentations:weteachcs: >-
+    mustache
+    ./bin/manipulate-for-weteachcs.js ./templates/presentations.mustache >
+    ./dist/presentations-for-weteachcs.html
 
   # "Build" (really, just output) final styles
     # Import partial template(s) (`-p ….mustache`)
@@ -47,7 +49,7 @@ scripts:
   build:styles: >-
     mustache
     -p ./templates/partials/styles.mustache
-    ./assets/_data.json ./templates/styles.mustache >
+    ./assets/_presentations.json ./templates/styles.mustache >
     ./dist/styles.html
 
   report: echo "Copy relevant markup from './dist/___.html"

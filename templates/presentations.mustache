@@ -1,38 +1,36 @@
-{{> styles}}
-    <h3>
-        Presentations</h3>
-    <p>
-        More presentations can be found on the <a href="https://www.slideshare.net/weteachcs" target="_blank">WeTeach_CS Slideshare</a> page.</p>
-    <table class="weteachcs-table">
-        <thead>
-            <tr>
-                <th class="weteachcs-table__date">
-                    Date</th>
-                <th class="weteachcs-table__title">
-                    Title</th>
-                <th class="weteachcs-table__place">
-                    Presented At</th>
-                <th class="weteachcs-table__cite">
-                    Author(s)</th>
-                <th class="weteachcs-table__link">
-                    Link</th>
-            </tr>
-        </thead>
-        <tbody>
-        {{#entries}}
-            <tr>
-                <td class="weteachcs-table__date">
-                    {{{date}}}</td>
-                <td class="weteachcs-table__title">
-                    {{name_of_presentation}}</td>
-                <td class="weteachcs-table__place">
-                    {{place}}</td>
-                <td class="weteachcs-table__cite">
-                    {{{authors}}}
-                </td>
-                <td class="weteachcs-table__link">
-                    {{#link}}<a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>{{#is_download}}Download{{/is_download}}{{^is_download}}View{{/is_download}}</a>{{/link}}</td>
-            </tr>
-        {{/entries}}
-        </tbody>
-    </table>
+<h3>
+    Presentations</h3>
+<p>
+    More presentations can be found on the <a href="https://www.slideshare.net/weteachcs" target="_blank">WeTeach_CS Slideshare</a> page.</p>
+<table class="weteachcs-table">
+    <thead>
+        <tr>
+            <th class="weteachcs-table__date">
+                Date</th>
+            <th class="weteachcs-table__title">
+                Title</th>
+            <th class="weteachcs-table__place">
+                Presented At</th>
+            <th class="weteachcs-table__cite">
+                Author(s)</th>
+            <th class="weteachcs-table__link">
+                Link</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#entries}}
+        <tr>
+            <td class="weteachcs-table__date">
+                {{{date}}}</td>
+            <td class="weteachcs-table__title">
+                {{name}}</td>
+            <td class="weteachcs-table__place">
+                {{place}}</td>
+            <td class="weteachcs-table__cite">
+                {{{authors}}}</td>
+            <td class="weteachcs-table__link">
+                {{#link}}<a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>View</a>{{/link}}</td>
+        </tr>
+    {{/entries}}
+    </tbody>
+</table>
