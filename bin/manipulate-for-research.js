@@ -5,4 +5,6 @@ let data = manipulate.get('./assets/_presentations.json');
     data = manipulate.filterByPage(data, 'Research');
     data = manipulate.wrap(data);
 
+data.should_link_to_more = true;
+
 module.exports = data;
