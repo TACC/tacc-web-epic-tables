@@ -1,37 +1,37 @@
 <h3>
-    Presentations</h3>
+	Presentations</h3>
 {{#should_link_to_more}}<p>
-    More presentations can be found on the <a href="https://www.slideshare.net/weteachcs" target="_blank">WeTeach_CS Slideshare</a> page.</p>
+	More presentations can be found on the <a href="https://www.slideshare.net/weteachcs" target="_blank">WeTeach_CS Slideshare</a> page.</p>
 {{/should_link_to_more}}
 <table class="weteachcs-table">
-    <thead>
-        <tr>
-            <th class="weteachcs-table__date">
-                Date</th>
-            <th class="weteachcs-table__title">
-                Title</th>
-            <th class="weteachcs-table__place">
-                Presented At</th>
-            <th class="weteachcs-table__cite">
-                Author(s)</th>
-            <th class="weteachcs-table__link">
-                Link</th>
-        </tr>
-    </thead>
-    <tbody>
-    {{#entries}}
-        <tr>
-            <td class="weteachcs-table__date">
-                {{{date}}}</td>
-            <td class="weteachcs-table__title">
-                {{name}}</td>
-            <td class="weteachcs-table__place">
-                {{place}}</td>
-            <td class="weteachcs-table__cite">
-                {{{authors}}}</td>
-            <td class="weteachcs-table__link">
-                {{#link}}<a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>View</a>{{/link}}</td>
-        </tr>
-    {{/entries}}
-    </tbody>
+	<thead>
+		<tr>
+			<th class="weteachcs-table__date">
+				Date</th>
+			<th class="weteachcs-table__title">
+				Title</th>
+			<th class="weteachcs-table__place">
+				Presented At</th>
+			<th class="weteachcs-table__cite">
+				Author(s)</th>
+			<th class="weteachcs-table__link">
+				Link</th>
+		</tr>
+	</thead>
+	<tbody>
+	{{#entries}}
+		<tr>
+			<td class="weteachcs-table__date">
+				{{{date}}}</td>
+			<td class="weteachcs-table__title">
+				{{name}}</td>
+			<td class="weteachcs-table__place">
+				{{place}}</td>
+			<td class="weteachcs-table__cite">
+				{{{authors}}}</td>
+			<td class="weteachcs-table__link">
+				{{#link}}<a href="{{{link}}}" target="_blank" {{#name}} title="{{name}}"{{/name}}>View</a>{{/link}}</td>
+		</tr>
+	{{/entries}}
+	</tbody>
 </table>
