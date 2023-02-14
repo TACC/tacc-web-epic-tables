@@ -14,7 +14,6 @@ function format(entries) {
   entries.forEach( entry => {
     entry.date = formatDate(entry.date);
     entry.authors = formatAuthors(entry.authors);
-    entry.link = formatLink(entry.link);
   });
 
   return entries;
@@ -38,13 +37,6 @@ function formatAuthors(authors) {
   const authorsString = authorsList.map( author => '<span>' + author + '</span>').join(', ');
 
   return authorsString;
-}
-
-/** Split authors by comma, then return desired markup */
-function formatLink(link) {
-  newLink = (link.startsWith('http')) ? link : 'http://' + link;
-
-  return newLink;
 }
 
 /** Filter out entries for other pages (entries for given webapge are kept) */
