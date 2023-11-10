@@ -13,30 +13,31 @@ function get(path) {
 function format(entries) {
   entries.forEach( entry => {
     entry.date = formatDate(entry.date);
-    entry.authors = formatAuthors(entry.authors);
+    entry.date_stamp = getTimestamp(entry.date);
+    // entry.should_link = Boolean(entry.link);
+    entry.should_link = false;
   });
 
   return entries;
 }
 
-/** Format escaped date date to render values in a manner suitable to render */
+/** Format interpreted date in a manner suitable to render */
 function formatDate(date) {
   dateObj = new Date(date);
   // SEE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#Syntax
   options = {
-    month: 'long',
+    month: 'short',
     year: 'numeric'
   };
 
   return dateObj.toLocaleString('en-US', options);
 }
 
-/** Split authors by comma, then return desired markup */
-function formatAuthors(authors) {
-  const authorsList = authors.split(',');
-  const authorsString = authorsList.map( author => '<span>' + author + '</span>').join(', ');
+/** Get date as a timestamp to be used in numeric operations */
+function getTimestamp(date) {
+  const timestamp = Date.parse(date);
 
-  return authorsString;
+  return timestamp;
 }
 
 /** Filter out entries for other pages (entries for given webapge are kept) */
@@ -49,6 +50,15 @@ function filterByPage(entries, webpage) {
   return newEntries;
 }
 
+/** Sort data by date */
+function sort(data) {
+  data.sort(function (a, b) {
+    return b.date_stamp - a.date_stamp;
+  });
+
+  return data;
+}
+
 /** Wrap all data in a manner that mustache templates expect */
 function wrap(data) {
   const newData = { entries: data };
@@ -57,5 +67,5 @@ function wrap(data) {
 }
 
 module.exports = {
-  get, format, filterByPage, wrap
+  get, format, filterByPage, sort, wrap
 };
